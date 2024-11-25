@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Cropper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <label for="aspectRatioSelect">Aspect Ratio:</label>
+<select id="aspectRatioSelect">
+    <option value="1:1">1:1</option>
+    <option value="4:3">4:3</option>
+    <option value="16:9">16:9</option>
+    <option value="custom">Custom</option>
+</select>
+<div id="customAspectRatio" style="display: none;">
+    <label for="aspectWidth">Width:</label>
+    <input type="number" id="aspectWidth" placeholder="Width" min="1" value="1">
+    <label for="aspectHeight">Height:</label>
+    <input type="number" id="aspectHeight" placeholder="Height" min="1" value="1">
+</div>
+
+    <div class="container">
+        <h1>Image Cropper</h1>
+        <input type="file" id="fileInput" accept="image/*" multiple>
+        <label for="partsSelect">Parts:</label>
+        <select id="partsSelect">
+            <option value="2">2</option>
+            <option value="3" selected>3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+        <button id="processImage">Process Image</button>
+        <button id="downloadAll">Download All</button>
+
+        <div class="filters">
+            <label for="brightness">Brightness:</label>
+            <input type="range" id="brightness" min="0" max="200" value="100">
+            <label for="contrast">Contrast:</label>
+            <input type="range" id="contrast" min="0" max="200" value="100">
+            <label for="grayscale">Grayscale:</label>
+            <input type="range" id="grayscale" min="0" max="100" value="0">
+        </div>
+
+        <div id="preview"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
